@@ -1,0 +1,39 @@
+header {
+    background: linear-gradient(#FFFAFA, #FAEBD7);
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+}
+
+a {
+    font-size: 35px;
+    padding: 20px;
+    color: rgb(255, 0, 0);
+    text-decoration: none;
+}
+
+a:hover{
+    color: #535353;
+    text-decoration: none;
+}
+
+li{
+    display: inline;
+}
+
+p{
+    color:rgb(214, 0, 0);
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 552;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(250, 119, 119, 0.5)
+}
+
+h1{
+    color: red;
+    
+}
