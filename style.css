@@ -1,39 +1,294 @@
-header {
-    background: linear-gradient(#FFFAFA, #FAEBD7);
+*{
+  margin: 0;
+  padding: 0;
 }
 
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 20px;
+body{
+  
+  color:white;
+}
+
+header{
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.Logo, .Top_menu{
+  margin-right: 25px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.Top_menu li{
+  margin-right: 25px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.Top_menu a{
+  vertical-align: middle;
+  font-family: arial;
+  font-size: 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.Top_menu a:hover{
+    color: #26C4FF
+}
+
+
+
+.Logo h1{
+  font-family: arial;
+  font-size: 30px;
+  vertical-align: middle;
+  color: white;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 15px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  --color-text: #000;
+  --color-bg-view-1: #ffffff;
+  --color-bg-view-2: #6a6468;
+  --color-link: #000;
+  color: var(--color-text);
+  background-color: var(--color-bg-view-1);
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+    sans-serif;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+}
+
+.wrapper {
+  overflow-y: auto;
+  height: 100vh;
 }
 
 a {
-    font-size: 35px;
-    padding: 20px;
-    color: rgb(255, 0, 0);
-    text-decoration: none;
+  text-decoration: none;
+  color: var(--color-link);
+  outline: none;
 }
 
-a:hover{
-    color: #535353;
-    text-decoration: none;
+a:hover {
+  color: var(--color-link-hover);
+  outline: none;
 }
 
-li{
-    display: inline;
+/* Better focus styles from https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible */
+a:focus {
+  outline: none;
+  background: lightgrey;
 }
 
-p{
-    color:rgb(214, 0, 0);
-    font-family: 'Roboto', Arial, sans-serif;
-    font-size: 28px;
-    font-weight: 552;
-    font-style: italic;
-    text-shadow: 2px 2px 4px rgba(250, 119, 119, 0.5)
+a:focus:not(:focus-visible) {
+  background: transparent;
 }
 
-h1{
-    color: red;
-    
+a:focus-visible {
+  outline: 2px solid #fff;
+  background: transparent;
 }
+
+main {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100vh;
+  @media (max-width: 576px) {
+    grid-auto-rows: min-content;
+    grid-template-rows: auto;
+  }
+}
+
+.frame--view-open .button-open {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.view {
+  position: relative;
+  grid-area: 1 / 1 / 2 / 2;
+  display: grid;
+  place-items: center;
+}
+
+.view--1 {
+  display: flex;
+  justify-content: space-around;
+}
+
+.view--1 p {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.view--2 {
+  background: var(--color-bg-view-2);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.view.view--open {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.overlay {
+  grid-area: 1 / 1 / 2 / 2;
+  position: relative;
+  z-index: 1000;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  font-family: "Bowlby One SC", sans-serif;
+  font-weight: 400;
+  font-size: 80px;
+  margin-bottom: 0;
+  position: relative;
+}
+
+p {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 18px;
+  @media (max-width: 576px) {
+    max-width: 300px;
+  }
+}
+
+.wrapper {
+  outline-style: inline-size;
+}
+
+.columns {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: calc(200px * 4)) {
+  .columns {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* =========================
+   GENERAL STYLES 
+   NOT RELATED TO THE DEMO
+============================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-primary: #ee6352;
+  --clr-secondary: #d16e8d;
+  --clr-accent: #f7f7ff;
+  --clr-gradient: linear-gradient(
+    -90deg,
+    var(--clr-primary),
+    var(--clr-secondary)
+  );
+  --ff-title: bungee, sans-serif;
+  --ff-body: canada-type-gibson, sans-serif;
+  --fw-body: 300;
+  --fw-bold: 800;
+  --fw-title: 400;
+  --fw-number: 800;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--ff-body);
+  font-weight: var(--fw-body);
+  font-size: 1.25rem;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover,
+a:focus {
+  color: var(--clr-accent);
+}
+
+:focus {
+  outline: 5px solid var(--clr-accent);
+  outline-offset: 3px;
+}
+
+.wrapper {
+  padding: 2rem;
+}
+
+.title,
+.credits {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1em 0 2em;
+  margin: 0;
+  background: var(--clr-gradient);
+  position: relative;
+  z-index: 1000;
+}
+
+.title {
+  font-size: calc(1rem + 3vw);
+  font-family: var(--ff-title);
+  font-weight: var(--fw-title);
+  color: white;
+  text-shadow: 3px 5px 10px rgba(0, 0, 0, 0.2);
+  clip-path: polygon(0 0, 100% 0%, 100% 60%, 0% 100%);
+}
+
+.title span {
+  font-weight: var(--fw-number);
+  color: black;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  font-size: 5em;
+  top: -30%;
+  z-index: -1;
+  opacity: 0.25;
+}
+
+.credits {
+  font-family: var(--ff-title);
+  width: 100%;
+  margin: 0;
+  padding: 6em 0 1em;
+  clip-path: polygon(0 60%, 100% 0, 100% 100%, 0% 100%);
+  color: rgba(black, 0.7);
+}
+
+.credits p:last-child {
+  font-size: 0.8em;
+}
+
